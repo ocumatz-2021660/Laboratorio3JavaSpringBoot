@@ -1,4 +1,4 @@
-package com.joabregil.Ejemplo1.model;
+package com.oscarcumatzl.SportStore.model;
 
 
 import jakarta.persistence.*;
@@ -19,6 +19,7 @@ public class User {
     private String lastName;
 
     @Column(name = "email")
+
     private String email;
 
     //GETTER AND SETTER

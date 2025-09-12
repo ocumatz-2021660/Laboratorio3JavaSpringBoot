@@ -1,6 +1,6 @@
-package com.joabregil.Ejemplo1.repository;
+package com.oscarcumatzl.SportStore.repository;
 
-import com.joabregil.Ejemplo1.model.User;
+import com.oscarcumatzl.SportStore.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
