@@ -1,22 +1,23 @@
--- drop database if exists DB_RepuestosAutomotriz;
--- create database DB_RepuestosAutomotriz;
-use DB_RepuestosAutomotriz;
-/*
-create table Repuesto(
-	codigoRepuesto int auto_increment,
-    nombreRepuesto varchar(100),
-    descripcion varchar(255),
-    primary key PK_codigoRepuesto(codigoRepuesto)
-);
-*/
+drop database if exists DBStoreMech;
+create database DBStoreMech;
+use DBStoreMech;
+
 create table Cliente(
-	codigoCliente int auto_increment,
-    nombreCliente varchar(100),
-    apellidoCliente varchar(100),
-    correoCliente varchar(100) unique,
-    telefonoCliente varchar(8) unique,
-    primary key PK_codigoCliente(codigoCliente)
+	codigo_Cliente int auto_increment,
+    nombre_Cliente varchar(100),
+    apellido_Cliente varchar(100),
+    correo_Cliente varchar(100) unique,
+    telefono_Cliente varchar(8) unique,
+    primary key PK_codigo_Cliente(codigo_Cliente)
 );
+
+create table Repuesto(
+	codigo_Repuesto int auto_increment,
+    nombre_Repuesto varchar(100),
+    descripcion_Repuesto varchar(255),
+    primary key PK_codigoRepuesto(codigo_Repuesto)
+);
+
 /*
 create table Factura(
 	codigoFactura int auto_increment, 
@@ -41,6 +42,9 @@ create table DetalleFactura(
 		references Repuesto(codigoRepuesto)		
 );
 */
-insert into Cliente(nombreCliente, apellidoCliente, correoCliente, telefonoCliente)
+
+insert into Cliente(nombre_Cliente, apellido_Cliente, correo_Cliente, telefono_Cliente)
 	value("Oscar","Cumatz","ocumatzz@gmail.com","55895952");
         -- select * from Cliente;
+insert into Repuesto(nombre_Repuesto, descripcion_Repuesto)
+	value("Artefacto1","es pal carro bro");

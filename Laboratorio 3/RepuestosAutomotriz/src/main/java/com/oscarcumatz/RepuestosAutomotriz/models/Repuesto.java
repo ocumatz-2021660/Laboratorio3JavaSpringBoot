@@ -10,10 +10,10 @@ public class Repuesto {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int codigoRepuesto;
 
-    @Column(name = "nombreRepuesto")
+    @Column(name = "nombre_Repuesto")
     private String nombreRepuesto;
 
-    @Column(name = "descripcion")
+    @Column(name = "descripcion_Repuesto")
     private String descripcion;
 
     public int getCodigoRepuesto() {
