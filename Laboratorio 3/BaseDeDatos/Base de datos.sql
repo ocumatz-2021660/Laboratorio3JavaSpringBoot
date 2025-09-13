@@ -27,21 +27,20 @@ create table Factura(
 		references Cliente (codigo_Cliente)
     
 );
-/*
-create table DetalleFactura(
-	codigoDetalle int auto_increment,
-    codigoFactura int,
-    codigoRepuesto int,
+
+create table Detalle_Factura(
+	codigo_Detalle int auto_increment,
+    codigo_Factura int,
+    codigo_Repuesto int,
     cantidad int,
-    precioUnitario double,
-    subtotal double default 0.0,
-    primary key PK_codigoDetalle (codigoDetalle),
-	constraint FK_codigoFacturaDetalle foreign key(codigoFactura)
-		references Factura (codigoFactura),
-	constraint FK_codigoRepuestoDetalle foreign key(codigoRepuesto)
-		references Repuesto(codigoRepuesto)		
+    precio_Unitario double,
+    subtotal double,
+    primary key PK_codigoDetalle (codigo_Detalle),
+	constraint FK_codigoFacturaDetalle foreign key(codigo_Factura)
+		references Factura (codigo_Factura),
+	constraint FK_codigoRepuestoDetalle foreign key(codigo_Repuesto)
+		references Repuesto(codigo_Repuesto)		
 );
-*/
 
 insert into Cliente(nombre_Cliente, apellido_Cliente, correo_Cliente, telefono_Cliente)
 	value("Oscar","Cumatz","ocumatzz@gmail.com","55895952");
@@ -51,3 +50,9 @@ insert into Repuesto(nombre_Repuesto, descripcion_Repuesto)
     
 insert into Factura(codigo_Cliente, total_Factura)
 	value(1,23.90);
+    
+insert into Detalle_Factura(
+ codigo_Factura, codigo_Repuesto, cantidad, precio_Unitario, subtotal )
+	value(1,1,3,12.00,23.00);
+    
+select * from  Detalle_Factura;

@@ -29,7 +29,7 @@ public class FacturaController {
             Factura nuevaFactura = facturaService.guardarFactura(factura);
             return "Factura agregada " + nuevaFactura.getTotal_Factura();
         } catch (IllegalArgumentException e) {
-            return "Resopetar el formato decimal porfavor " + e.getMessage();
+            return "Resopetar el formato decimal porfavor ";
         }
     }
     @PutMapping("/{codigo_Factura}")
@@ -41,7 +41,7 @@ public class FacturaController {
             }
             return "Factura actualizada con total: " + updateFactura.getTotal_Factura();
         } catch (IllegalArgumentException e) {
-            return "Respetar el formato decimal por favor. " + e.getMessage();
+            return "Respetar el formato decimal por favor. ";
         }
     }
     @DeleteMapping ("/{codigo_Factura}")
