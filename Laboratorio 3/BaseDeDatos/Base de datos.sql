@@ -18,16 +18,16 @@ create table Repuesto(
     primary key PK_codigoRepuesto(codigo_Repuesto)
 );
 
-/*
 create table Factura(
-	codigoFactura int auto_increment, 
-    codigoCliente int,
-    total double default 0.0,
-    primary key PK_codigoFactura(codigoFactura),
-    constraint FK_codigoCliente foreign key (codigoCliente)
-		references Cliente (codigoCliente)
+	codigo_Factura int auto_increment, 
+    codigo_Cliente int,
+    total_Factura double,
+    primary key PK_codigoFactura(codigo_Factura),
+    constraint FK_codigoCliente foreign key (codigo_Cliente)
+		references Cliente (codigo_Cliente)
     
 );
+/*
 create table DetalleFactura(
 	codigoDetalle int auto_increment,
     codigoFactura int,
@@ -48,3 +48,6 @@ insert into Cliente(nombre_Cliente, apellido_Cliente, correo_Cliente, telefono_C
         -- select * from Cliente;
 insert into Repuesto(nombre_Repuesto, descripcion_Repuesto)
 	value("Artefacto1","es pal carro bro");
+    
+insert into Factura(codigo_Cliente, total_Factura)
+	value(1,23.90);
